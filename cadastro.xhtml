@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head></h:head>
+<ui:composition template="_template.xhtml">
+	<ui:define name="content">
+		<body style="background-color: #ddd">
+
+			<p:messages id="messages" closable="true">
+				<p:autoUpdate />
+			</p:messages>
+
+			<h:form enctype="multipart/form-data">
+				<p:card style="width: 25em; margin: 1em auto">
+
+					<f:facet name="title">Cadastrar Visitante</f:facet>
+					<div class="ui-fluid">
+
+						<div class="p-field">
+							<label for="nome">Nome</label>
+							<p:inputText id="nome" type="text" value="#{userBean.user.nome}"
+								required="true" requiredMessage="O campo nome é obrigatório">
+								<f:ajax event="blur" render="messages" />
+							</p:inputText>
+						</div>
+
+						<div class="p-field p-col-12 p-md-4">
+							<label for="dataNascimento">Data de Nascimento</label>
+							<p:datePicker id="dataNascimento"
+								value="#{userBean.user.dataNascimento}" monthNavigator="true"
+								yearNavigator="true" required="true"
+								requiredMessage="O campo data de nascimento é obrigatório">
+								<f:ajax event="blur" render="messages" />
+							</p:datePicker>
+						</div>
+
+						<div class="p-field">
+							<label for="cpf">CPF</label>
+							<p:inputMask id="cpf" mask="999.999.999-99"
+								value="#{userBean.user.cpf}"
+								validatorMessage="O RG deve conter 8 dígitos.">
+								<f:ajax event="blur" render="messages" />
+								<f:validateLength minimum="14" maximum="14" />
+							</p:inputMask>
+						</div>
+
+						<div class="p-field">
+							<label for="rg">RG</label>
+							<p:inputMask id="rg" mask="99.999.999"
+								value="#{userBean.user.rg}"
+								validatorMessage="O RG deve conter 8 dígitos.">
+								<f:ajax event="blur" render="messages" />
+								<f:validateLength minimum="10" maximum="10" />
+							</p:inputMask>
+						</div>
+
+						<div class="p-field">
+							<label for="digitoRg">Dígito</label>
+							<p:inputText id="digitoRg" type="text"
+								value="#{userBean.user.digitoRg}">
+								<f:ajax event="blur" render="messages" />
+								<f:validateLength minimum="1" maximum="1" />
+							</p:inputText>
+						</div>
+
+						<div class="p-field">
+							<label for="image">Imagem: </label>
+							<p:fileUpload id="image" mode="simple" skinSimple="true"
+								value="#{userBean.image}" />
+						</div>
+
+					</div>
+
+					<f:facet name="footer">
+						<p:commandButton icon="pi pi-check" value="Save"
+							action="#{userBean.save()}" />
+					</f:facet>
+
+				</p:card>
+			</h:form>
+		</body>
+	</ui:define>
+</ui:composition>
+</html>
