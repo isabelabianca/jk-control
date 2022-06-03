@@ -51,7 +51,7 @@ public class UserBean {
 			.getCurrentInstance()
 			.addMessage(null, new FacesMessage("Visitante cadastrado com sucesso!"));
 		
-		return "profiles";
+		return "visitantes";
 	}
 
 	public List<User> list() {
@@ -60,43 +60,7 @@ public class UserBean {
 
 	public List<User> getList() {
 		return list;
-	}
-	
-//	public String login() {
-//		if(userDao.exist(user)) {
-//			//Salvar o usuário logado na sessão
-//			FacesContext
-//				.getCurrentInstance()
-//				.getExternalContext()
-//				.getSessionMap()
-//				.put("user", user);
-//			
-//			return "setups";
-//		}
-//		
-//		FacesContext
-//			.getCurrentInstance()
-//			.getExternalContext()
-//			.getFlash()
-//			.setKeepMessages(true);
-//		
-//		FacesContext
-//			.getCurrentInstance()
-//			.addMessage(null, new FacesMessage("Login Inválido"));
-//		
-//		return "login?faces-redirect=true";
-//	}
-//	
-//	public String logout() {
-//		FacesContext
-//		.getCurrentInstance()
-//		.getExternalContext()
-//		.getSessionMap()
-//		.remove("user");
-//		
-//		return "login";
-//	}
-	
+	}	
 
 	public void setList(List<User> list) {
 		this.list = list;
