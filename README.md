@@ -1,6 +1,6 @@
 <h3>Avaliação Semestral de Digital Business Enablement</h3>
 
-Aplicação Web para Gestão de Portaria, consistindo em: página de cadastro de visitante com upload de foto e página de consulta de visitante, onde serão listados todos os visitantes cadastrados.
+Aplicação Web para Gestão de Portaria, consistindo em: página de cadastro de visitante com upload de foto e página de consulta de visitantes, onde serão listados todos os visitantes cadastrados.
 
 
 Tecnologias utilizadas:
@@ -15,4 +15,4 @@ Tecnologias utilizadas:
 Banco de dados utilizado: H2
 
 
-Aluna: Isabela Bianca Correa de Macedo - 88493
+Aluna: Isabela Bianca Correa de Macedo - RM 88493
