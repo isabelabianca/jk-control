@@ -39,14 +39,6 @@ public class User {
 		this.dataCadastro = dataCadastro;
 		this.imagePath = imagePath;
 	}
-
-	public String converteData(LocalDate data) {
-		Date date = Date.from(data.atStartOfDay(ZoneId.systemDefault()).toInstant());
-        SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
-        String dataForm = format.format(date);
-
-        return dataForm;
-	}
 	
 	public String getId() {
 		return id;
