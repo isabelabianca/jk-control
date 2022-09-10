@@ -12,7 +12,7 @@ import br.com.fiap.model.User;
 public class UserDao {
 
 	EntityManagerFactory factory = 
-			Persistence.createEntityManagerFactory("progamer-persistence-unit");
+			Persistence.createEntityManagerFactory("dimdim-persistence-unit");
 	EntityManager manager = factory.createEntityManager();
 	
 	public void create(User user) {

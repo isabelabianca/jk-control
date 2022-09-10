@@ -12,7 +12,7 @@ public class EntityManagerProducer {
 	@RequestScoped
 	public EntityManager get() {
 		EntityManagerFactory factory = 
-				Persistence.createEntityManagerFactory("progamer-persistence-unit");
+				Persistence.createEntityManagerFactory("dimdim-persistence-unit");
 		EntityManager manager = factory.createEntityManager();
 		return manager;
 	}

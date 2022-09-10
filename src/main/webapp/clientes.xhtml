@@ -15,10 +15,7 @@
 		<h:form>
 			<div class="card">
 				<p:dataTable var="user" value="#{userBean.list}">
-					<p:column>
-						<img src="#{request.contextPath}#{user.imagePath}"
-							style="width: 100px; height: 100px; border-radius: 50%" />
-					</p:column>
+					
 
 					<p:column headerText="Nome">
 						<h:outputText value="#{user.nome}" />
@@ -35,9 +32,15 @@
 					<p:column headerText="RG">
 						<h:outputText value="#{user.rg}-#{user.digitoRg}" />
 					</p:column>
-					
-					<p:column headerText="Data de Cadastro">
-						<h:outputText value="#{user.dataCadastro}"/>
+
+					<p:column headerText="CEP">
+						<h:outputText value="#{user.cep}" />
+					</p:column>
+					<p:column headerText="Rua">
+						<h:outputText value="#{user.rua}" />
+					</p:column>
+					<p:column headerText="Nº">
+						<h:outputText value="#{user.numeroCasa}" />
 					</p:column>
 					
 				</p:dataTable>

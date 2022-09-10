@@ -17,7 +17,7 @@
 			<h:form enctype="multipart/form-data">
 				<p:card style="width: 25em; margin: 1em auto">
 
-					<f:facet name="title">Cadastrar Visitante</f:facet>
+					<f:facet name="title">Cadastrar Cliente</f:facet>
 					<div class="ui-fluid">
 
 						<div class="p-field">
@@ -68,9 +68,23 @@
 						</div>
 
 						<div class="p-field">
-							<label for="image">Imagem: </label>
-							<p:fileUpload id="image" mode="simple" skinSimple="true"
-								value="#{userBean.image}" />
+							<label for="cep">CEP</label>
+							<p:inputText id="cep" type="text" value="#{userBean.user.cep}">
+								<f:ajax event="blur" render="messages" />
+							</p:inputText>
+						</div>
+						<div class="p-field">
+							<label for="rua">Rua</label>
+							<p:inputText id="rua" type="text" value="#{userBean.user.rua}">
+								<f:ajax event="blur" render="messages" />
+							</p:inputText>
+						</div>
+						<div class="p-field">
+							<label for="numeroCasa">Nº</label>
+							<p:inputText id="numeroCasa" type="text"
+								value="#{userBean.user.numeroCasa}">
+								<f:ajax event="blur" render="messages" />
+							</p:inputText>
 						</div>
 
 					</div>
